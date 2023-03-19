@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表页</title>
+</head>
+<body>
+<a th:href="@{/to/add/student}">添加学生</a>
+<table>
+  <tr>
+    <th>学号</th>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>生日</th>
+    <th>电话</th>
+    <th>学历</th>
+    <th>地址</th>
+    <th>年级</th>
+    <th>操作</th>
+  </tr>
+  <tr th:each="student: ${studentList}">
+    <td th:text="${student.stuId}"></td>
+    <td th:text="${student.stuName}"></td>
+    <td th:text="${student.sex}"></td>
+    <td th:text="${#dates.format(student.birthday,'yyyy-MM-dd')}"></td>
+    <td th:text="${student.phone}"></td>
+    <td th:text="${student.edu}"></td>
+    <td th:text="${student.address}"></td>
+    <td th:text="${student.gradeId}"></td>
+    <td>
+      <a th:href="@{'/student/'+${student.stuId}}">查看</a>
+      <a th:href="@{'/student/to/modify/'+${student.stuId}}">修改</a>
+      <a  class="delete" th:href="@{'/student/'+${student.stuId}}">删除</a>
+    </td>
+    <form method="post">
+      <input type="hidden" name="_method" value="delete">
+    </form>
+  </tr>
+</table>
+</body>
+</html>

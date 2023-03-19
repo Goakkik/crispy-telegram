@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oracle.mapper.StudentMapper">
+    <!--查找所有学生-->
+    <select id="selectAllStudents" resultType="student">
+        select * from `student` order by `stuId` asc
+    </select>
+    <!--根据学号找学生-->
+    <select id="selectStudentByStuId" parameterType="int" resultType="student">
+        select * from `student` where `stuId`=#{stuId}
+    </select>
+
+    <insert id="insertStudent" parameterType="int">
+        insert into `student` (`stuName`,`sex`,`birthday`,`phone`,`edu`,`address`,`gradeId`)
+        values (#{stuName},#{sex},#{birthday},#{phone},#{edu},#{address},#{gradeId})
+    </insert>
+    <delete id="deleteStudentBystuId" parameterType="int">
+        delete from `student` where `stuId`=#{stuId}
+    </delete>
+</mapper>

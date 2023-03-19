@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">
+<head>
+    <meta charset="UTF-8">
+    <title>学校管理系统首页</title>
+</head>
+<body>
+    <h1>欢迎来到学校管理系统！！！</h1>
+    <label th:text="${msg}"></label>
+    <form method="post" action="/login">
+        账号：<input name="userName" type="text"><br>
+        密码：<input name="password" type="password"><br>
+        <input type="submit" value="登录">
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生页</title>
+</head>
+<body>
+    <form method="post" th:action="@{/student}">
+        姓名：<input name="stuName" type="text">
+        性别：<input name="sex" type="text">
+        生日：<input name="birthday" type="date">
+        电话：<input name="phone" type="text">
+        学历：<input name="edu" type="text">
+        地址：<input name="address" type="text">
+        年级：<input name="gradeId" type="text">
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

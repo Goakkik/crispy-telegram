@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看学生页</title>
+</head>
+<body>
+    学号：<p th:text="${student.stuId}"></p>
+    姓名：<p th:text="${student.stuName}"></p>
+    性别：<p th:text="${student.sex}"></p>
+    生日：<p th:text="${#dates.format(student.birthday,'yyyy-MM-dd')}"></p>
+    电话：<p th:text="${student.phone}"></p>
+    学历：<p th:text="${student.edu}"></p>
+    地址：<p th:text="${student.address}"></p>
+    年级：<p th:text="${student.gradeId}"></p>
+</body>
+</html>

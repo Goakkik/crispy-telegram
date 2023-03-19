@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学校管理系统后台</title>
+</head>
+<body>
+  <h1>学校管理系统后台</h1>
+    <a th:href="@{/to/add/student}">添加学生</a>
+    <div>
+        欢迎进入学生管理系统后台，
+        你好，<span th:text="${session.loginUser.userName}"></span>
+    </div>
+</body>
+</html>
